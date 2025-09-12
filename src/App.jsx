@@ -65,10 +65,12 @@ function App() {
 
   // Remove from Cart
   let handleRemove = (product) => {
-    let index = cart.findIndex((item) => item.id == product.id);
+    let index = cart.findIndex((item) => item.title == product.title);
     console.log("remove index:", index);
     cart.splice(index, 1);
+     console.log("remove",cart)
     setCart([...cart]);
+   
   };
 
   
@@ -106,6 +108,7 @@ function App() {
               <Products
                 key={product.id}
                 product={product}
+                cart={cart}
                 handleCart={handleCart}
               ></Products>
             );

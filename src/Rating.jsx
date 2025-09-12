@@ -19,9 +19,9 @@ function Rating({product}){
                   clip-rule="evenodd"
                 />
               </svg>
-                <div className=" flex items-center justify-center gap-2 text-[#222222]">
-              <span className="roboto-font">{rate}</span>
-              <span>({product.rating.count})</span>
+                <div className="text-center flex items-center justify-center gap-2  ">
+              <span className="roboto-font text-[#4B2E00]">{rate}</span>
+              <span className="  text-[#4B2E00]">({product.rating.count})</span>
               </div>
             </div>
            ) : rate > 3.0 ? (
@@ -38,9 +38,9 @@ function Rating({product}){
                   clip-rule="evenodd"
                 />
               </svg>
-              <div className=" flex items-center justify-start gap-2 text-[#222222]">
-              <span className="">{rate}</span>
-              <span>({product.rating.count})</span>
+              <div className=" flex items-center justify-start gap-2 ">
+              <span className=" text-[#4B2E00]">{rate}</span>
+              <span className="  text-[#4B2E00]">({product.rating.count})</span>
               </div>
             </div>
            ) : (
@@ -58,8 +58,8 @@ function Rating({product}){
                 />
               </svg>
                 <div className=" flex items-center justify-center gap-2 text-[#222222]">
-              <span>{rate}</span>
-              <span>({product.rating.count})</span>
+              <span className="  text-[#4B2E00]">{rate}</span>
+              <span className="  text-[#4B2E00]">({product.rating.count})</span>
               </div>
             </div>
           )}

@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-function AddToCart({ product, handleCart }) {
+function AddToCart({ product, handleCart,cart }) {
+
+
+ 
+ 
 
   // state to hold alert popup
   const [alert, setAlert] = useState(false);
 
-  // state to check items added already toast
-  const [isAdded, setIsAdded] = useState(false);
+  
+  
 
 
    // state to hold items added already toast
@@ -16,32 +20,38 @@ function AddToCart({ product, handleCart }) {
 
 
  //1.when add to card clicked it will setAlert=true ask,...Do you want to add this product to cart?
- // 2 .."handleAlertConfirm" confirm=> add items,(setShowToastSuccess=true)success toast, isadded state true,
-// 3. if we again click add to card call "handleAlert" checks "isAdded" state,if it is true ("ShowToast=true(items added already toast)  ,  ShowToastSuccess=false") pop "items added already toast"
+ // 2 .."handleAlertConfirm" confirm=> add items,(setShowToastSuccess=true)success toast, alreadyInCart state true,
+// 3. if we again click add to card call "handleAlert" checks "alreadyInCart" ,if it is true ("ShowToast=true(items added already toast)  ,  ShowToastSuccess=false") pop "items added already toast"
 
 
   let handleAlert = () => { 
-    if (isAdded) {
-      setShowToastSuccess(false);
+    //  to check items added already in cart
+    const alreadyInCart = cart.some(itemInCart => itemInCart.title === product.title);
+    if (alreadyInCart) {
+      setShowToastSuccess(false);   // show "already added"
       setShowToast(true);
     } else {
-      setAlert(true);
+      setAlert(true);  // show confirmation alert
     }
   };
+  // close
   let handleAlertClose = () => {
     setAlert(false);
   };
-  let handleAlertConfirm = () => {
-    handleCart(product);
+//  confirm
+  let handleAlertConfirm = (item) => {
+    
 
-    setShowToastSuccess(true);
+      handleCart(product);
 
-    setIsAdded(true);
-
-    setAlert(false);
+      setShowToastSuccess(true);
+      setShowToast(false);
+       setAlert(false);
   };
 
   let handleAdded = () => {
+      //close two toast
+   
     setShowToast(false);
     setShowToastSuccess(false);
   };

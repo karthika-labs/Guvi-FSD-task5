@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Rating from "./Rating";
 import AddToCart from "./AddToCart";
-function Products({ product, handleCart }) {
+function Products({ product, handleCart,cart }) {
 
   // state for overview cards
   const [overview, setOverview] = useState(null);
@@ -69,7 +69,7 @@ function Products({ product, handleCart }) {
             )}
             {overview === product && (
               // <div className="flex max-w-4/5 mx-auto  mt-16 h-screen  bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700 absolute right-0 top-0 left-0 mt-12 text-white ">
-              <div className=" poppins-bold  fixed inset-0 z-50 flex items-center justify-center bg-black/50   overflow-auto">
+              <div className=" poppins-bold  fixed inset-0 z-50 flex items-center justify-center bg-black/80   overflow-auto">
                 <div class="w-full max-w-sm overflow-auto hide-scrollbar h-full flex flex-col gap-8 items-center    mx-auto bg-[#D4AF37] border border-gray-200 rounded-lg shadow-sm  dark:border-gray-700">
                   <a href="#">
                     <img
@@ -80,7 +80,7 @@ function Products({ product, handleCart }) {
                   </a>
                   <div class="px-5 pb-5">
                     <a href="#">
-                      <h5 class="  text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                      <h5 class="  text-xl font-semibold tracking-tight text-[#4B2E00] ">
                         {product.title}
                       </h5>
                     </a>
@@ -90,13 +90,13 @@ function Products({ product, handleCart }) {
                       </h5>
                     </a>
                     <div class="flex items-center justify-between">
-                      <span class="text-3xl font-bold text-gray-900 dark:text-white">
+                      <span class="text-3xl font-bold  text-[#4B2E00]">
                         ₹{product.price}
                       </span>
-                      <div class="flex items-center mt-2.5 mb-5">
-                        <div class="flex items-center space-x-1 rtl:space-x-reverse"></div>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">
-                          <Rating product={product}></Rating>
+                      <div class="flex items-center justify-center mt-2.5 mb-5">
+                        <div class="flex items-center justify-center space-x-1 rtl:space-x-reverse"></div>
+                        <span class="flex items-center justify-center  bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">
+                          <Rating  product={product}></Rating>
                         </span>
                       </div>
                     </div>
@@ -112,7 +112,7 @@ function Products({ product, handleCart }) {
                       <button
                         onClick={() => setOverview(null)}
                         type="button"
-                        class=" flex mt-2  items-center justify-center text-blue-800 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600  dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
+                        class=" flex mt-2 cursor-pointer  items-center justify-center text-blue-800 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600  dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
                       >
                         Back
                         <svg
@@ -153,7 +153,7 @@ function Products({ product, handleCart }) {
             <Rating product={product}></Rating>
 
             {/* ADD TO CART */}
-            <AddToCart className="grow" product={product} handleCart={handleCart}></AddToCart>
+            <AddToCart className="grow" product={product} handleCart={handleCart} cart={cart}></AddToCart>
 
            
           </div>
