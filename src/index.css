@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Hide scrollbar but still allow scrolling */
+.hide-scrollbar {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+@keyframes zoom-in-out {
+  0%,100%{
+    transform: scale(1.2);
+  }
+  50%{
+    transform: scale(1);
+  }
+  
+}
+
+.toast-zoom {
+  animation: zoom-in-out 1s ease-in-out infinite;
+}
+.toast-zoom:hover{
+  animation-play-state: paused;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+.righteous-regular {
+  font-family: "Righteous", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.bona-nova-sc-bold {
+  font-family: "Bona Nova SC", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-font {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
