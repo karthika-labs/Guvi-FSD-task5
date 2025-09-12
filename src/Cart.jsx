@@ -92,7 +92,7 @@ function Cart({ product, handleRemove }) {
 
   return (
     <>
-      <NavBar handleCartAlert={handleCartAlert} />
+      <NavBar handleCartAlert={handleCartAlert} product={product} />
 
       {/* Confirm Open Cart Alert */}
       {alert && (
