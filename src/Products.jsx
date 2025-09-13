@@ -28,7 +28,7 @@ function Products({ product, handleCart,cart }) {
 
   return (
     <>
-      <div className="  ">
+      <div className="righteous-regular  ">
         {/* <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"> */}
         <div className="bg-[#E0E0E0] rounded-lg shadow-md p-4 flex flex-col items-center justify-center gap-1 h-full">
           <div className="flex flex-1 grow flex-wrap flex-col gap-2 px-4 justify-items-center  ">
@@ -38,7 +38,7 @@ function Products({ product, handleCart,cart }) {
               onClick={() => handleOverview()}
             ></img>
             {alert && (
-              <div className="fixed poppins-bold    flex items-center p-4 mb-4 text-blue-800 border-t-4 border-blue-300 bg-blue-50 dark:text-blue-400 dark:bg-gray-800 dark:border-blue-800">
+              <div className="fixed poppins-bold righteous-regular   flex items-center p-4 mb-4 text-blue-800 border-t-4 border-blue-300 bg-blue-50 dark:text-blue-400 dark:bg-gray-800 dark:border-blue-800">
                 <svg
                   className="shrink-0 w-4 h-4"
                   aria-hidden="true"

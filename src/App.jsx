@@ -51,7 +51,6 @@ function App() {
     setProducts(filteredProducts);
   };
 
-
   // Add to Cart
   let handleCart = (product) => {
     let isCart = cart.some((item) => item.id === product.id);
@@ -68,27 +67,29 @@ function App() {
     let index = cart.findIndex((item) => item.title == product.title);
     console.log("remove index:", index);
     cart.splice(index, 1);
-     console.log("remove",cart)
+    console.log("remove", cart);
     setCart([...cart]);
-   
   };
 
-  
   return (
     <div className="max-w-7xl mx-auto bg-[#D4AF37] ">
-      <div  className="">
-      <Cart product={cart} handleRemove={handleRemove}></Cart>
-       </div>
+      <div className="">
+        <Cart product={cart} handleRemove={handleRemove}></Cart>
+      </div>
       <div className=" grid grid-cols-[auto_1fr] ">
         <aside className="  cursor-pointer  p-4 rounded shadow transition-all duration-1000">
           <div
             onClick={() =>
               categoryMenu ? setCategoryMenu(false) : setCategoryMenu(true)
             }
- className="mt-2 text-white hover:text-blue-800 transition duration-500 ease-in-out transform hover:scale-x-110 text-center"
-
+            className="mt-2 text-white hover:text-blue-800 transition duration-500 ease-in-out transform hover:scale-x-110 text-center"
           >
-           <span className="bona-nova-sc-bold text-[20px]">Category</span> 
+            {/* <button class=" bona-nova-sc-bold text-[20px]  relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group  border-from-cyan-500 to-blue-500  group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800">
+              <span class="relative px-5 py-2.5 transition-all ease-in duration-75 rounded-md group-hover:bg-transparent group-hover:dark:bg-gray-900">
+                Category
+              </span>
+            </button> */}
+            <button type="button" className=" bona-nova-sc-bold text-[20px] text-white bg-gradient-to-r from-blue-700 via-blue-500 to-blue-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Category</button>
           </div>
           {categoryMenu && (
             <div>

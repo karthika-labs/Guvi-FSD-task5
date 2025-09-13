@@ -22,19 +22,19 @@ If you are developing a production application, we recommend using TypeScript wi
  **Product listing** displayed in cards with images, titles, prices, and ratings  
  **Category filtering** with images — click to view products by specific categories  
  **Add to Cart functionality**:
-- Popup confirmation before adding items  
+ 
 - Toast notifications for successful addition and duplicate alerts  
  **Product overview modal**:
 - Clicking on a product image opens an overview modal  
 - "Back" button allows returning to the product listing  
 **Cart management**:
-- Clicking the cart icon asks for confirmation before opening the cart  
+
 - Cart displays items in a table layout  
 - Increase/decrease quantity and remove items  
 - "Back" button prompts for confirmation before closing the cart  
  **Price calculation**:
 - Total price updates in real-time  
-- 10% discount applied if total exceeds ₹1000  
+- 10% discount applied if total exceeds ₹1000  it will shown while hover i
 - Discount styled dynamically in green when applied, red with strike-through when not  
 **Animations and hover effects** on buttons and toast notifications  
 **Responsive design** that adapts to different screen sizes  
